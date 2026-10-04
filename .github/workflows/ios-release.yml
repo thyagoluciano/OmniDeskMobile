@@ -52,6 +52,16 @@ jobs:
           security list-keychains -d user -s "$KEYCHAIN" login.keychain-db
           rm -f "$RUNNER_TEMP/cert.p12"
 
+          # Certificates issued recently chain to newer Apple intermediates (WWDR G3/G6).
+          # Without them the identity is not trusted and Xcode reports "No signing certificate found".
+          for CA in AppleWWDRCAG3 AppleWWDRCAG6; do
+            curl -fsSL "https://www.apple.com/certificateauthority/$CA.cer" -o "$RUNNER_TEMP/$CA.cer"
+            security import "$RUNNER_TEMP/$CA.cer" -k "$KEYCHAIN" -T /usr/bin/codesign || true
+          done
+
+          echo "Valid code signing identities:"
+          security find-identity -v -p codesigning "$KEYCHAIN"
+
       - name: Install provisioning profile
         env:
           IOS_PROVISIONING_PROFILE_BASE64: ${{ secrets.IOS_PROVISIONING_PROFILE_BASE64 }}
