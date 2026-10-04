@@ -55,8 +55,10 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
+      # The first bundle was uploaded manually with versionCode 100, and run_number restarts at 1
+      # for this workflow, so an offset keeps every CI build above the last uploaded code.
       - name: Build app bundle
-        run: flutter build appbundle --release --build-number=${{ github.run_number }}
+        run: flutter build appbundle --release --build-number=$((100 + ${{ github.run_number }}))
 
       - name: Upload to Google Play (internal testing)
         uses: r0adkll/upload-google-play@v1
