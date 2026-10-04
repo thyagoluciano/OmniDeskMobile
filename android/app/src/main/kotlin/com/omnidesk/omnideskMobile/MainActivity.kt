@@ -1,4 +1,4 @@
-package com.omnidesk.omnidesk_mobile
+package com.omnidesk.omnideskMobile
 
 import io.flutter.embedding.android.FlutterActivity
 
