@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Community Discussions & Questions
+    url: https://github.com/thyagoluciano/OmniDesk/discussions
+    about: Ask questions, share ideas, or get help with troubleshooting from the community.
+  - name: 🖥️ OmniDesk Desktop Repository
+    url: https://github.com/thyagoluciano/OmniDesk
+    about: Visit the main desktop engine and daemon repository for Linux, macOS & Windows.
+  - name: 🗺️ Product Roadmap
+    url: https://github.com/thyagoluciano/OmniDesk/blob/main/ROADMAP.md
+    about: Check planned milestones, current development status, and upcoming releases.
+  - name: 🛡️ Report a Security Vulnerability
+    url: https://github.com/thyagoluciano/OmniDeskMobile/security/advisories/new
+    about: Responsibly disclose security vulnerabilities to the maintainers privately.

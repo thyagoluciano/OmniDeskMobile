@@ -1,0 +1,96 @@
+name: 🐛 Bug Report
+description: Report an issue or unexpected behavior in OmniDesk Mobile
+title: "[Bug]: "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping us improve OmniDesk Mobile! Please ensure you have checked existing issues to see if this bug has already been reported.
+
+        If this is a security vulnerability, please refer to our [Security Policy](https://github.com/thyagoluciano/OmniDeskMobile/blob/main/SECURITY.md) instead of creating a public issue.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: A clear and concise description of what the problem is.
+      placeholder: Describe what happened...
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to Reproduce
+      description: Step-by-step instructions on how to reproduce the bug.
+      placeholder: |
+        1. Open OmniDesk on Desktop (macOS/Linux/Windows)
+        2. Open OmniDesk Mobile on iPhone/Android
+        3. Scan QR Code to pair
+        4. Copy text on phone
+        5. Notice that...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected vs Actual Behavior
+      description: What did you expect to happen, and what actually happened?
+      placeholder: Expected the clipboard to sync within 1 second, but instead...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: mobile_os
+    attributes:
+      label: Mobile Platform
+      description: Which mobile platform(s) does this affect?
+      multiple: true
+      options:
+        - "iOS (iPhone / iPad)"
+        - "Android"
+        - "Both"
+    validations:
+      required: true
+
+  - type: input
+    id: device_info
+    attributes:
+      label: Device & OS Version
+      description: Device model and operating system version.
+      placeholder: "e.g., iPhone 15 Pro (iOS 17.5) or Samsung Galaxy S23 (Android 14)"
+    validations:
+      required: true
+
+  - type: input
+    id: desktop_info
+    attributes:
+      label: Paired Desktop OS & OmniDesk Version
+      description: What OS is running on the paired desktop machine?
+      placeholder: "e.g., macOS Sonoma (Apple Silicon) - OmniDesk v0.3.0"
+
+  - type: input
+    id: flutter_version
+    attributes:
+      label: Flutter Version (if running from source)
+      description: Run `flutter --version` in terminal.
+      placeholder: "e.g., Flutter 3.24.0 • channel stable"
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: App Logs / Console Output
+      description: Paste any relevant logs or terminal stack traces here.
+      render: shell
+
+  - type: checkboxes
+    id: checklists
+    attributes:
+      label: Verification
+      options:
+        - label: I verified that both the desktop and phone are connected to the same local Wi-Fi network.
+          required: true
+        - label: I searched existing issues and confirmed this is not a duplicate.
+          required: true

@@ -1,0 +1,55 @@
+name: 💡 Feature Request
+description: Suggest an idea or enhancement for OmniDesk Mobile
+title: "[Feature]: "
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for suggesting improvements to OmniDesk Mobile! Please review the [OmniDesk Desktop Roadmap](https://github.com/thyagoluciano/OmniDesk/blob/main/ROADMAP.md) and open issues to see if your idea is already planned.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Description
+      description: Is your feature request related to a problem or missing workflow?
+      placeholder: I'm always frustrated when...
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: Describe what you would like to see happen in OmniDesk Mobile.
+      placeholder: Provide a clear and concise description of the feature or UI change...
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: Any alternative solutions or workarounds you considered.
+      placeholder: A clear and concise description of any alternative solutions...
+
+  - type: dropdown
+    id: target_platform
+    attributes:
+      label: Target Mobile Platform
+      options:
+        - "Both (iOS & Android)"
+        - "iOS only"
+        - "Android only"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklists
+    attributes:
+      label: Principles Alignment
+      options:
+        - label: This feature respects OmniDesk's 100% local-first & zero-cloud privacy philosophy.
+          required: true
+        - label: I searched existing issues and discussions to confirm this is not a duplicate.
+          required: true
