@@ -70,7 +70,7 @@ jobs:
           status: completed
 
       - name: Save AAB artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: omnidesk-aab
           path: build/app/outputs/bundle/release/app-release.aab
